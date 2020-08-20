@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState,useEffect } from 'react';
+import Header from './comps/Header.jsx';
+import Posts from './comps/Posts.jsx';
+import useDatabse from './hooks/useDatabase';
+import BottomBar from './comps/BottomBar';
+
+
+
 
 function App() {
+
+  const [user,setCurrentUser]= useState(null);
+  const {posts}=useDatabse('posts');
+  //console.log(posts);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* header */}
+      <Header user={user} setCurrentUser={setCurrentUser}/>
+      {/* Main body posts */}
+      {posts && posts.map((post) =>(
+                                     <Posts key={post.id} username={post.username} caption={post.caption} imgUrl={post.imgUrl}/>
+                                   ))}
+      {user && <BottomBar user={user}/>}
     </div>
   );
 }

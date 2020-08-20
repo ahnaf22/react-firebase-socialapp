@@ -1,13 +1,166 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+*{
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* variables for colors */
+:root{
+    --primary: #ea3f3f;
+    --secondary: #4e4e4e;
+    --error: #fa2525;
+    --progress:#C51162;
+  }
+
+
+/* set the App initials */
+  .App{
+      background-color: #FAFAFA;
+      font-family: 'Cairo', sans-serif ;
+      height: 100vh;
+      
+  }
+
+
+  /* Header Part CSS */
+  .site-header{
+      background-color: white;
+      padding: 10px;
+      border-bottom: 1px solid lightgrey;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+    
+  }
+  .site-header-logo{
+      object-fit: contain;
+      margin-left: 6%;
+  }
+
+  .auth-modals{
+      margin-right: 6%;
+  }
+
+
+  /* posts css customizations */
+  .post{
+      max-width: 500px;
+      background-color: white;
+      border: 1px solid lightgrey;
+      margin-top: 40px;
+      padding: 20px;
+      margin-left: 30px;
+  }
+  .post-header{
+      display: flex;
+      align-items: center;
+      padding: 20px 0 20px 0;
+  }
+
+  .post-avatar{
+      margin-right: 10px;
+  }
+  
+  .post-image{
+      width: 100%;
+      object-fit: contain;
+      border-top: 1px solid lightgrey;
+      border-bottom: 1px solid lightgrey;
+  }
+  .post-text{
+      font-weight: normal;
+      padding: 20px;
+  }
+
+  .post-image-preview{
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    margin: 10px auto;
+  }
+
+  /* progressBar */
+  .progress-bar{
+      height: 3px;
+      background-color: var(--progress);
+  }
+  
+
+/* signup form style */
+.form-signup{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
 }
+
+
+/* bottoBar styles */
+.bottomWrap{
+    position: sticky;
+    bottom: 0;
+    text-align: center;
+    background-color: rgb(243, 247, 245);
+    border-top: 1px solid lightgrey;
+    padding: 20px;
+}
+.bottomContent{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 20%;
+    grid-auto-flow: column;
+
+}
+
+
+/* upload form style */
+  form{
+    text-align: center;
+  }
+  label input{
+    height: 0;
+    width: 0;
+    display: none;
+  }
+  label{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary);
+    border-radius: 10%;
+    line-height: 25px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 24px;
+  }
+  label:hover{
+    background: var(--primary);
+    color: white;
+  }
+
+  /* notification icon styling */
+  .noti-icon{
+      color: var(--primary);
+  }
+  .noti-icon:hover{
+      color: var(--progress);
+  }
+  .search-icon{
+      color: var(--primary);
+  }
+  .search-icon:hover{
+      color: var(--progress);
+  }
+
+
+  /* progress upload */
+ .upload-progress{
+     height: 3px;
+     border-radius: 2px;
+     background-color: var(--progress);
+ }
