@@ -3,7 +3,9 @@ import Avatar from '@material-ui/core/Avatar';
 import {motion} from "framer-motion";
 
 
-function Posts({username,caption,imgUrl}) {
+function Posts({postId,username,caption,imgUrl,}) {
+
+    //console.log(postId);
     return (
         <motion.div className="post"
                     initial={{opacity:0}}
